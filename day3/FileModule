@@ -1,0 +1,40 @@
+#Reading  the file
+#f=open('PythanPractice\day3\myfile.txt','r')
+#print(f)
+#opening the file
+#text=f.read()
+#print(text)
+#f.close()
+
+#Writing a file
+f=open('myfile.txt','a')
+f.write('Hello,world')
+f.close()
+
+with open('myfile.txt','a')as f:
+    f.write("Hey I am inside with")
+
+f=open('PythanPractice\day3\myfile.txt','r')
+while True:
+    line=f.readline()
+    m1=f.split(",")[0]
+    m2=f.split(",")[1]
+    m3=f.split(",")[2]
+    print(f"marks of student 1 in math :{m1}")
+   
+    print(f"marks of student 1 in pyh :{m1}")
+    print(f"marks of student 1 in che :{m1}")
+    if not line:
+        break
+    print(line)
+    f=open('myfile.txt','w')
+    lines=['line 1\n','line2\n','line3\n']
+    f.writelines(lines)
+    f.close()
+    
+
+
+
+
+
+
