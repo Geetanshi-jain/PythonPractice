@@ -64,6 +64,23 @@ for i in range(5):
 
 """
 
+n = 5  
+
+for i in range(1, n + 1):
+   
+    print(' ' * (n - i), end='')
+
+    
+    for j in range(i, 2 * i):
+        print(j, end=' ')
+
+   
+    for j in range(2 * i - 2, i - 1, -1):
+        print(j, end=' ')
+
+    
+    print()
+
 # 7. * * * * * 
 #      * * *
 #        *
@@ -76,7 +93,6 @@ for i in range(5,0,-1):
         print("*",end=" ")
     print()
 
-
 #        * 
 #      * * *
 #    * * * * *
@@ -84,8 +100,6 @@ for i in range(5,0,-1):
 #    * * * * *  
 #      * * *
 #        *
-
-
 for i in range(5):
     for j in range(5-1-i):
         print(" ",end=" ")
@@ -95,23 +109,9 @@ for i in range(5):
 for i in range(5,0,-1):
     for j in range(5-i):
         print(" ",end=" ")
-
     for j in  range(2*i-1):
         print("*",end=" ")
     print()
-
-"""
-9.
-           1
-         1   1
-       1   2   1
-     1   3   3    1
-   1  4    6   4   1
- 1  5   10   10  5   1 
-
-
-"""
-
 """10.
 1
 2 3
@@ -197,11 +197,53 @@ def fibbonacci(num):
 fibbonacci(5)
 
 """count no of digits"""
-num =int(input("enter a number"))
-dig=0
-while(num>0):
-    dig=num%10
-    dig+=1
-    num=num/10
-print(" dig = ",dig)
+# Python code to count the number of digits in a number
+num = int(input("Enter a number: "))
+count = 0
 
+# Ensure the input number is positive
+if num == 0:
+    count = 1
+else:
+    while num > 0:
+        num //= 10  
+        count += 1  
+print("Number of digits:", count)
+
+
+"""REverse an integer
+"""
+integer =int(input("enter a number"))
+reversenum=0
+remainder=0
+while(integer>0):
+    remainder=integer%10
+    reversenum =reversenum*10+remainder
+    integer//=10
+
+print(reversenum)
+"""check armstrong number of 3 digits"""
+
+num=int(input("enter anumber"))
+res=0
+n=num
+while num>0:
+    rem=num%10
+    res+=rem*rem*rem
+    num/=10
+if(res==n):
+    print("number is armstrog")
+else:
+    print("no is not armstrong")
+
+"power of a number using while loop"
+base =2
+exponent =3
+res=1
+while exponent!=0:
+    res*=base
+    exponent=exponent-1
+print("Answer = ",res)
+
+"pow() function used"
+print(pow(12,2))
